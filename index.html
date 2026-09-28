@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>CARTER DROP</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Clean Minimalist Header -->
+    <header class="top-bar">
+      <div class="brand">CARTER DROP</div>
+      <div class="stats-group">
+        <div class="stat-item">
+          <span class="stat-label">SCORE</span>
+          <span id="current-score" class="stat-num">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">BEST</span>
+          <span id="high-score" class="stat-num">0</span>
+        </div>
+        <div class="next-slot">
+          <span class="stat-label">NEXT</span>
+          <div class="next-ball-preview">
+            <canvas id="next-preview-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Viewport -->
+    <main class="case-viewport">
+      <canvas id="game-canvas"></canvas>
+    </main>
+
+    <!-- Minimal Controls -->
+    <footer class="bottom-bar">
+      <button id="bump-btn" class="btn-minimal">TAP</button>
+      <button id="reset-quick-btn" class="btn-minimal">RESET</button>
+    </footer>
+  </div>
+
+  <!-- Game Over Modal -->
+  <div id="game-over-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <div class="modal-sub">FINAL SCORE</div>
+      <div id="modal-final-score" class="modal-score">0</div>
+      <div id="modal-tier-badge" class="modal-badge">TIER 1</div>
+      <button id="restart-btn" class="btn-primary">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="matter.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
